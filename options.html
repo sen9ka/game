@@ -93,11 +93,13 @@ h3{
 #rus{
 	margin-top: 10px;
 	width: 60px;
+	height: 20px;
 	float: left;
 	padding: 4px;
 	margin-left: 30px;
 	cursor: pointer;
 }
+
 
 #eng{
 	margin-top: 10px;
@@ -108,19 +110,41 @@ h3{
 	cursor: pointer;
 }
 
+.backButton{
+    /*text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 30px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #DDB09D;
+    border-radius: 20px;*/
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+#backButton:hover{
+    width: 60px;
+    height: 60px;
+}
+
 
    	</style>
 </head>
 <body>
     <div class="menu">
     	<div class="head">
-    		<h1>Options</h1>
+    		<h1 id="options">Options</h1>
     	</div>
 
     	<div class="optionsBricks optColor">
-    		<h3>Color bricks: </h3>
+    		<h3 id="optionsBricks">Color bricks: </h3>
     		<div class="colors">
-    			<div id="blue">blue</div>
+    			<div id="blue" class='blue'>blue</div>
                 <div id="green">green</div>
 				<div id="red">red</div>
     		</div>
@@ -128,9 +152,9 @@ h3{
     	</div>
 
     	<div class="optionsPaddle optColor">
-    		<h3>Color paddle: </h3>
+    		<h3 id="optionsPaddle">Color paddle: </h3>
     		<div class="colors">
-    			<div id="blue">blue</div>
+    			<div id="blue" class='blue'>blue</div>
                 <div id="green">green</div>
 				<div id="red">red</div>
     		</div>
@@ -138,9 +162,9 @@ h3{
     	</div>
 
     	<div class="optionsBall optColor">
-    		<h3>Color ball: </h3>
+    		<h3 id="optionsBall">Color ball: </h3>
     		<div class="colors">
-    			<div id="blue">blue</div>
+    			<div id="blue" class='blue'>blue</div>
                 <div id="green">green</div>
 				<div id="red">red</div>
     		</div>
@@ -148,7 +172,7 @@ h3{
     	</div>
 
     	<div class="optionsLanguage optColor">
-    		<h3>Language: </h3>
+    		<h3 id="optionsLanguage">Language: </h3>
     		<div class="language">
     			<div id="rus">Русский</div>
                 <div id="eng">English</div>
@@ -156,9 +180,59 @@ h3{
     		<br>      <br>
     	</div>
     	
-    	<div class="save">
-    		<h2>Save</h2>
+    	<div class="save" onclick="document.location='index.html'">
+    		<h2 id="save">Save</h2>
     	</div>
     </div>
+
+    <div class="backButton" onclick="document.location = 'index.html'">
+            <img src="back.png" alt="" width="50px" height="50px" id="backButton">
+        </div>
+
+    <script>
+    	let clickRus = document.getElementById('rus');
+    	let clickEng = document.getElementById('eng');
+    	let check;
+
+    	clickRus.onclick = function () {
+    	clickRus.style.background = '#B9C9E1';
+    	clickEng.style.background = '#E0D3B8';
+
+    	document.getElementById("options").innerHTML="Настройки";
+
+    	document.getElementById("optionsBricks").innerHTML="Настройки кирпичиков";
+
+    	document.getElementById("optionsPaddle").innerHTML="Настройки весла";
+
+    	document.getElementById("save").innerHTML="Сохранить";
+
+    	document.getElementById("optionsBall").innerHTML="Настройки мяча";
+
+    	document.getElementById("optionsLanguage").innerHTML="Язык";
+    	document.getElementById("blue").innerHTML="синий";
+
+    	document.getElementById("green").innerHTML="зеленый";
+
+    	document.getElementById("red").innerHTML="красный";
+
+
+    	document.getElementById("head").innerHTML="Арканоид";
+
+    	document.getElementById("options").innerHTML="Настройки";
+
+    	document.getElementById("options").innerHTML="Настройки";
+
+   		}
+  
+    	clickEng.onclick = function () {
+    		clickEng.style.background = '#B9C9E1';
+    		clickRus.style.background = '#E0D3B8';
+    	}
+  
+    	
+
+    	
+
+    </script>
 </body>
 </html>
