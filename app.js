@@ -14,6 +14,7 @@ let lifeLostText;
 let playing = false;
 let startButton;
 let log = window.localStorage.getItem('myNick','nick')
+let record;
 
 
 
@@ -121,7 +122,10 @@ function ballLeaveScreen() {
     }
     else {
         alert('You lost, game over!');
-        location.reload();
+        
+        record = window.localStorage.setItem('myRecord', score);
+        document.location = 'menu.html';
+        // location.reload();
     }
 }
 function ballHitPaddle(ball, paddle) {
@@ -139,3 +143,4 @@ function handleRemoteImagesOnJSFiddle() {
 	game.load.baseURL = 'https://end3r.github.io/Gamedev-Phaser-Content-Kit/demos/';
 	game.load.crossOrigin = 'anonymous';
 }
+
