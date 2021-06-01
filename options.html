@@ -141,7 +141,7 @@ h3{
     		<h1 id="options">Options</h1>
     	</div>
 
-    	<div class="optionsBricks optColor">
+    	<!-- <div class="optionsBricks optColor">
     		<h3 id="optionsBricks">Color bricks: </h3>
     		<div class="colors">
     			<div id="blue" class='blue'>blue</div>
@@ -169,7 +169,7 @@ h3{
 				<div id="red">red</div>
     		</div>
     		<br>      <br>
-    	</div>
+    	</div> -->
 
     	<div class="optionsLanguage optColor">
     		<h3 id="optionsLanguage">Language: </h3>
@@ -180,7 +180,7 @@ h3{
     		<br>      <br>
     	</div>
     	
-    	<div class="save" onclick="document.location='index.html'">
+    	<div class="save" >
     		<h2 id="save">Save</h2>
     	</div>
     </div>
@@ -192,42 +192,29 @@ h3{
     <script>
     	let clickRus = document.getElementById('rus');
     	let clickEng = document.getElementById('eng');
+        let save = document.getElementById('save');
     	let check;
 
     	clickRus.onclick = function () {
+            check = true;
     	clickRus.style.background = '#B9C9E1';
     	clickEng.style.background = '#E0D3B8';
-
-    	document.getElementById("options").innerHTML="Настройки";
-
-    	document.getElementById("optionsBricks").innerHTML="Настройки кирпичиков";
-
-    	document.getElementById("optionsPaddle").innerHTML="Настройки весла";
-
-    	document.getElementById("save").innerHTML="Сохранить";
-
-    	document.getElementById("optionsBall").innerHTML="Настройки мяча";
-
-    	document.getElementById("optionsLanguage").innerHTML="Язык";
-    	document.getElementById("blue").innerHTML="синий";
-
-    	document.getElementById("green").innerHTML="зеленый";
-
-    	document.getElementById("red").innerHTML="красный";
-
-
-    	document.getElementById("head").innerHTML="Арканоид";
-
-    	document.getElementById("options").innerHTML="Настройки";
-
-    	document.getElementById("options").innerHTML="Настройки";
 
    		}
   
     	clickEng.onclick = function () {
+            check = false;
     		clickEng.style.background = '#B9C9E1';
     		clickRus.style.background = '#E0D3B8';
     	}
+
+        save.onclick = function(){
+            if (check === true){
+                document.location = 'menuRus.html'
+            }else{
+                document.location = 'menu.html'
+            }
+        }
   
     	
 
