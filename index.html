@@ -4,92 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <script src="phaser.min.js"></script> -->
-   	<style>
-   		*{
-	padding: 0;
-	margin: 0;
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
 }
 
 body{
-	background-color: #C9BDA3;
+    background-color: #C9BDA3;
 }
 
 .menu{
-	background-color: #EDE2CB;
-	height: 480px;
-	width: 700px;
-	display: block;
-	margin: auto;
-	text-align: center;
-	padding: 5px;
+    background-color: #EDE2CB;
+    height: 480px;
+    width: 700px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
 }
 
 .head{
-	padding: 10px;
-	background-color: #D8C7A4;
-	margin: -5px;
+    padding: 10px;
+    background-color: #D8C7A4;
+    margin: -5px;
 }
 
-.play{
-	padding: 20px;
-	margin: 20px;
-	background-color: #DDB09D;
-	border-radius: 20px;
-}
-.play:hover{
-	padding: 20px;
-	margin: 10px;
-	margin-top: 20px;
-	background-color: #D89A7F;
+.content{
+    font-family: 'Nanum Pen Script', cursive;
+    margin-top: 20px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 20px;
 }
 
-.options{
-	padding: 20px;
-	margin: 20px;
-	background-color: #DDB09D;
-	border-radius: 20px;
-}
-.options:hover{
-	padding: 20px;
-	margin: 10px;
-	margin-top: 20px;
-	background-color: #D89A7F;
+.login{
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
 }
 
-.about{
-	padding: 20px;
-	margin: 20px;
-	background-color: #DDB09D;
-	border-radius: 20px;
+.btn{
+    margin-top: 20%;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100px;
+
 }
-.about:hover{
-	padding: 20px;
-	margin: 10px;
-	margin-top: 20px;
-	background-color: #D89A7F;
-}
-   	</style>
+
+
+/*onclick="document.location = 'index.html'"*/
+
+    </style>
 </head>
 <body>
     <div class="menu">
-    	<div class="head">
-    		<h1 id="head">Arkanoid</h1>
-    	</div>
+        <div class="head">
+            <h1>Welcome!</h1>
+        </div>
+        
+        <input type="text" placeholder="login" class="login" id="login">
 
-    	<div class="play" onclick="document.location='play.html'">
-    		<h2>Play</h2>
-    	</div>
-
-    	<div class="options" onclick="document.location='options.html'">
-    		<h2>Options</h2>
-    	</div>
-
-    	<div class="about" onclick="document.location='about.html'">
-    		<h2>About</h2>
-    	</div>
+        <input type="button" value="Enter" class="btn" id="btn" >
     </div>
 
-    <!-- <script src="app.js"></script> -->
+    <script>
+        let nick = document.getElementById('login');
+        let btn = document.getElementById('btn');
+        
+        btn.onclick = function () {
+            let login = window.localStorage.setItem('myNick', nick.value)
+            document.location = 'menu.html';
+        }
+        
+        
+    </script>
 </body>
 </html>
