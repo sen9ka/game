@@ -6,12 +6,15 @@ let bricks;
 let newBrick;
 let brickInfo;
 let scoreText;
+let playerNick;
 let score = 0;
 let lives = 3;
 let livesText;
 let lifeLostText;
 let playing = false;
 let startButton;
+let log = window.localStorage.getItem('myNick','nick')
+
 
 
 
@@ -44,8 +47,8 @@ function create() {
     paddle.body.immovable = true;
 
     initBricks();
-
     textStyle = { font: '18px Arial', fill: '#0095DD' };
+    playerNick = game.add.text(200, 5, log, textStyle);
     scoreText = game.add.text(5, 5, 'Points: 0', textStyle);
     livesText = game.add.text(game.world.width-5, 5, 'Lives: '+lives, textStyle);
     livesText.anchor.set(1,0);
@@ -123,7 +126,7 @@ function ballLeaveScreen() {
 }
 function ballHitPaddle(ball, paddle) {
     ball.animations.play('wobble');
-    ball.body.velocity.x = -1*5*(paddle.x-ball.x);
+    ball.body.velocity.x = -1*50*(paddle.x-ball.x);
 }
 function startGame() {
     startButton.destroy();
