@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   	<style>
+   		*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	background-color: #C9BDA3;
+}
+
+.menu{
+	background-color: #EDE2CB;
+	height: 480px;
+	width: 700px;
+	display: block;
+	margin: auto;
+	text-align: center;
+	padding: 5px;
+}
+
+.head{
+	padding: 10px;
+	background-color: #D8C7A4;
+	margin: -5px;
+}
+
+.save{
+	padding: 20px;
+	margin: 20px;
+	background-color: #DDB09D;
+	border-radius: 20px;
+}
+
+.save:hover{
+	background-color: #D89A7F;
+}
+
+h3{
+	margin-left: -350px;
+}
+#blue{
+	margin-top: 10px;
+	width: 60px;
+	float: left;
+	padding: 4px;
+	background-color: #0095DD;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+#red{
+	margin-top: 10px;
+	width: 60px;
+	float: left;
+	padding: 4px;
+	background-color: #DD0000;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+#green{
+	margin-top: 10px;
+	width: 60px;
+	float: left;
+	padding: 4px;
+	background-color: #00DD88;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.colors{
+	margin-top: -30px;
+	margin-left: 250px;
+}
+
+.optColor{
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #E0D3B8;
+}
+
+.language{
+	margin-top: -30px;
+	margin-left: 250px;
+}
+
+#rus{
+	margin-top: 10px;
+	width: 60px;
+	height: 20px;
+	float: left;
+	padding: 4px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+
+#eng{
+	margin-top: 10px;
+	width: 60px;
+	float: left;
+	padding: 4px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.backButton{
+    /*text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px;
+    height: 30px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #DDB09D;
+    border-radius: 20px;*/
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+#backButton:hover{
+    width: 60px;
+    height: 60px;
+}
+
+
+   	</style>
+</head>
+<body>
+    <div class="menu">
+    	<div class="head">
+    		<h1 id="options">Options</h1>
+    	</div>
+
+    	<!-- <div class="optionsBricks optColor">
+    		<h3 id="optionsBricks">Color bricks: </h3>
+    		<div class="colors">
+    			<div id="blue" class='blue'>blue</div>
+                <div id="green">green</div>
+				<div id="red">red</div>
+    		</div>
+    		<br>      <br>
+    	</div>
+
+    	<div class="optionsPaddle optColor">
+    		<h3 id="optionsPaddle">Color paddle: </h3>
+    		<div class="colors">
+    			<div id="blue" class='blue'>blue</div>
+                <div id="green">green</div>
+				<div id="red">red</div>
+    		</div>
+    		<br>      <br>
+    	</div>
+
+    	<div class="optionsBall optColor">
+    		<h3 id="optionsBall">Color ball: </h3>
+    		<div class="colors">
+    			<div id="blue" class='blue'>blue</div>
+                <div id="green">green</div>
+				<div id="red">red</div>
+    		</div>
+    		<br>      <br>
+    	</div> -->
+
+    	<div class="optionsLanguage optColor">
+    		<h3 id="optionsLanguage">Язык: </h3>
+    		<div class="language">
+    			<div id="rus">Русский</div>
+                <div id="eng">English</div>
+    		</div>
+    		<br>      <br>
+    	</div>
+    	
+    	<div class="save" onclick="document.location='menu.html'">
+    		<h2 id="save">Сохранить</h2>
+    	</div>
+    </div>
+
+    <div class="backButton" onclick="document.location = 'menuRus.html'">
+            <img src="back.png" alt="" width="50px" height="50px" id="backButton">
+        </div>
+
+    <script>
+    	let clickRus = document.getElementById('rus');
+        let clickEng = document.getElementById('eng');
+        let save = document.getElementById('save');
+        let check;
+
+        clickRus.onclick = function () {
+            check = false;
+        clickRus.style.background = '#B9C9E1';
+        clickEng.style.background = '#E0D3B8';
+
+        }
+  
+        clickEng.onclick = function () {
+            check = true;
+            clickEng.style.background = '#B9C9E1';
+            clickRus.style.background = '#E0D3B8';
+        }
+
+        save.onclick = function(){
+            if (check === true){
+                document.location = 'menu.html'
+            }else{
+                document.location = 'menuRus.html'
+            }
+        }
+  
+
+    </script>
+</body>
+</html>
