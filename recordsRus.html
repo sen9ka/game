@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #C9BDA3;
+}
+
+.menu{
+    background-color: #EDE2CB;
+    height: 480px;
+    width: 700px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+}
+
+.head{
+    padding: 10px;
+    background-color: #D8C7A4;
+    margin: -5px;
+}
+
+.content{
+    font-family: 'Nanum Pen Script', cursive;
+    margin-top: 20px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.backButton{
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+#backButton:hover{
+    width: 60px;
+    height: 60px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="head">
+            <h1>Рекорды</h1>
+        </div>
+    <div class="content" id="content">
+         
+    </div>
+        
+    </div>
+
+    <div class="backButton" onclick="document.location = 'menuRus.html'">
+            <img src="back.png" alt="" width="50px" height="50px" id="backButton">
+        </div>
+
+        <script>
+            let playerRecord = window.localStorage.getItem('myRecord','record');
+            let playerNick = window.localStorage.getItem('myNick', 'nick');
+            document.getElementById('content').innerHTML = `${playerNick}:   ${playerRecord}`
+        </script>
+</body>
+</html>
