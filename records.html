@@ -32,8 +32,9 @@ body{
     margin: -5px;
 }
 
+
+
 .content{
-    font-family: 'Nanum Pen Script', cursive;
     margin-top: 20px;
     text-align: left;
     font-weight: 800;
@@ -56,10 +57,14 @@ body{
 <body>
     <div class="menu">
         <div class="head">
-            <h1>Records</h1>
+            <h1>Records (top 5)</h1>
         </div>
     <div class="content" id="content">
-         
+         <div id="num1">1.LogFAN: 210 </div>
+         <div id="num2">2.Darya: 210 </div>
+         <div id="num3">3.asdf: 200 </div>
+         <div id="num4">4.sniper: 190 </div>
+         <div id="num5">5.</div>
     </div>
         
     </div>
@@ -71,7 +76,7 @@ body{
         <script>
             let playerRecord = window.localStorage.getItem('myRecord','record');
             let playerNick = window.localStorage.getItem('myNick', 'nick');
-            document.getElementById('content').innerHTML = `${playerNick}:   ${playerRecord}`
+            document.getElementById('num5').innerHTML = `5.${playerNick}:   ${playerRecord}`
         </script>
 </body>
 </html>
